@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/titlebar"/>
+
+    <!--
+    include 包含某个布局
+    android:cacheColorHint 取消listview条目选择时的背景颜色的背景
+    android:divider listview 里面两个item之间的背景
+    -->
+    <ListView
+        android:id="@+id/melistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/transparent"
+        android:dividerHeight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:scrollbarStyle="outsideInset"/>
+
+
+</LinearLayout>

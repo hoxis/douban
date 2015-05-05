@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/list_item_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50.0dip"
+    android:background="@drawable/category_selector"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:ellipsize="marquee"
+        android:paddingLeft="5.0dip"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/director_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="right"
+        android:paddingRight="5.0dip"
+        android:scaleType="centerInside"
+        android:src="@drawable/director_icon"/>
+
+</LinearLayout>

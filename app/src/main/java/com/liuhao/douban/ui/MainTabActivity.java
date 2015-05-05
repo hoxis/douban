@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ public class MainTabActivity extends FragmentActivity {
     private LayoutInflater layoutInflater;
 
     //定义数组来存放Fragment界面
-    private Class[] fragmentArray= {Fragment1.class, Fragment2.class, Fragment3.class, Fragment4.class, Fragment5.class};
+    private Class[] fragmentArray= {MeActivity.class, NewBookActivity.class, BookCommentActivity.class, SearchActivity.class, AboutActivity.class};
 
     //定义数组来存放按钮图片
     private int[] mImageViewArray = {R.drawable.tab_main_nav_me, R.drawable.tab_main_nav_book,
@@ -33,6 +34,7 @@ public class MainTabActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_tab);
         initView();
     }
@@ -56,6 +58,7 @@ public class MainTabActivity extends FragmentActivity {
             //设置Tab按钮的背景
             mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.tab_main_nav_selector);
         }
+        //mTabHost.setCurrentTab(2);//设置启动时显示的tab
     }
 
     private View getTabItem(int i) {
