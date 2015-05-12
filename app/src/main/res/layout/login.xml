@@ -86,8 +86,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="请输入验证码"
-                        android:inputType="text"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="点击图片可更换"
+                        android:inputType="textVisiblePassword"
                         android:minHeight="40dp"/>
 
                     <ImageView
@@ -104,21 +105,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ll_captcha"
                     android:gravity="center"
-                    android:paddingBottom="30dp"
-                    android:paddingTop="30dp"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp"
                     >
 
                     <Button
                         android:id="@+id/btn_login"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:background="@drawable/wp_button_small"
                         android:text="登录"/>
 
                     <Button
                         android:id="@+id/btn_back"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:background="@drawable/wp_button_small"
                         android:text="返回"/>
                 </LinearLayout>
