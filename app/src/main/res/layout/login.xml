@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/scroll_login"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5F5F5"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:id="@+id/inner_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF5F5F5"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/doubanLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/douban_logo"
+            />
+
+        <RelativeLayout
+            android:id="@+id/section1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/doubanLogo"
+            android:background="@drawable/content_bg"
+            android:paddingTop="5dp"
+            >
+
+            <TextView
+                android:id="@+id/l_section1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_login"/>
+
+            <RelativeLayout
+                android:id="@+id/wrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/l_section1"
+                android:paddingTop="10dp">
+
+                <EditText
+                    android:id="@+id/editText_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="请输入邮箱"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="40dp"/>
+
+                <EditText
+                    android:id="@+id/editText_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editText_email"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:minHeight="40dp"/>
+
+                <!--验证码显示部分-->
+                <LinearLayout
+                    android:id="@+id/ll_captcha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editText_password"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/editText_captchaValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入验证码"
+                        android:inputType="text"
+                        android:minHeight="40dp"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_captcha"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="false"
+                        android:scaleType="fitXY"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_captcha"
+                    android:gravity="center"
+                    android:paddingBottom="30dp"
+                    android:paddingTop="30dp"
+                    >
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wp_button_small"
+                        android:text="登录"/>
+
+                    <Button
+                        android:id="@+id/btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wp_button_small"
+                        android:text="返回"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
