@@ -6,8 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -17,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liuhao.douban.R;
+import com.liuhao.douban.util.NetWorkUtil;
 
 /**
  * Created by liuhao on 2015/5/2.
@@ -38,7 +37,7 @@ public class SplashActivity extends Activity{
         splashLinearLayout = (LinearLayout) this.findViewById(R.id.SplashLinearLayout);
 
         //判断当前网络状态是否可用
-        if(isNetConnected()){
+        if(NetWorkUtil.isNetConnected(getApplicationContext())){
             //设置动画，进入主界面
             Toast.makeText(getApplicationContext(),"网络可用",Toast.LENGTH_SHORT).show();
             AlphaAnimation aa = new AlphaAnimation(0.1f, 1.0f);//透明度变化动画类
@@ -121,9 +120,4 @@ public class SplashActivity extends Activity{
         }
     }
 
-    public boolean isNetConnected(){
-        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo info = manager.getActiveNetworkInfo();
-        return (info!=null&&info.isConnected());
-    }
 }
