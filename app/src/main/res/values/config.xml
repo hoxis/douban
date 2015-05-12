@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="loginUrl">http://accounts.douban.com/login</string>
+    <string name="imgUrl">http://www.douban.com/misc/captcha?id=</string>
 </resources>
