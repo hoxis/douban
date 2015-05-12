@@ -16,17 +16,28 @@ import java.util.List;
  */
 public class NetWorkUtil {
 
-    public static boolean isNeedCaptcha(Context context) throws Exception {
+    public static String isNeedCaptcha(Context context) throws Exception {
         String loginUrl = context.getResources().getString(R.string.loginUrl);
         URL url = new URL(loginUrl);
         URLConnection conn = url.openConnection();
         Source source = new Source(conn);
-        List<Element> elements = source.getAllElements("input");
+        //筛选出<img>标签
+        List<Element> elements = source.getAllElements("img");
         for (Element element : elements) {
-            if (element.getAttributeValue("name").equals("captcha-id")) {
-                return true;
+            if ("captcha_image".equals(element.getAttributeValue("id"))) {
+                String imgUrl = element.getAttributeValue("src");
+                return imgUrl;
             }
         }
-        return false;
+
+//        List<Element> elements = source.getAllElements("input");
+//        for (Element element : elements) {
+//            if (element.getAttributeValue("name").equals("captcha-id")) {
+//                String imgId = element.getAttributeValue("value");
+//                return imgId;
+//            }
+//        }
+
+        return null;
     }
 }
